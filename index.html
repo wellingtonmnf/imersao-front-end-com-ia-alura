@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cheap Chain Channel</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
+    <script type="module" src="script.js" defer></script>
 </head>
 
 <body>
@@ -20,43 +20,8 @@
             <h2 id="profiles-title">Quem está assistindo?</h2>
             <ul class="profiles-wrapper" aria-label="Lista de perfis">
                 <li>
-                    <ol class="profiles" aria-label="Perfil por ordem">
-                        <li>
-                            <article class="profile" role="button" tabindex="0">
-                                <figure>
-                                    <img src="/assets/perfil-01.png"
-                                        alt="Um home branco, sobrevivente pós-apocalíptico robusto com barba, com um respirador tático pendurado no pescoço e uma jaqueta de lona desgastada em uma cidade em ruínas.">
-                                    <figcaption>Wellington</figcaption>
-                                </figure>
-                            </article>
-                        </li>
-                        <li>
-                            <article class="profile" role="button" tabindex="0">
-                                <figure>
-                                    <img src="/assets/perfil-02.png"
-                                        alt="Uma mulher branca, detetive de polícia dos anos 40 de aparência séria com cabelo curto cacheado e blazer de tweed em um escritório enfumaçado.">
-                                    <figcaption>Milena</figcaption>
-                                </figure>
-                            </article>
-                        </li>
-                        <li>
-                            <article class="profile" role="button" tabindex="0">
-                                <figure>
-                                    <img src="/assets/perfil-03.png"
-                                        alt="Um homem branco idoso de barba branca longa, túnica rústica e aparência de mago em uma caverna de cristais, focado em contemplação.">
-                                    <figcaption>João Vitor</figcaption>
-                                </figure>
-                            </article>
-                        </li>
-                        <li>
-                            <article class="profile" role="button" tabindex="0">
-                                <figure>
-                                    <img src="/assets/perfil-04.png"
-                                        alt="Uma mulher negra jovem, piloto de combate do futuro com cabelo trançado e traje tático avançado no cockpit escuro de uma nave espacial.">
-                                    <figcaption>Maria Eduarda</figcaption>
-                                </figure>
-                            </article>
-                        </li>
+                    <ol class="profiles" aria-label="Perfil por ordem" id="profiles-list">
+                        <!-- perfis serão gerados dinamicamente via JavaScript -->
                     </ol>
                 </li>
             </ul>

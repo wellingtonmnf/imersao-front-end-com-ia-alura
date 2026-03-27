@@ -1,3 +1,5 @@
+import { userProfiles } from './js/userProfiles.js';
+
 // Toggle Dark/Light Mode
 const themeToggle = document.getElementById('theme-toggle');
 const body = document.body;
@@ -25,3 +27,49 @@ function updateToggleIcon() {
         themeToggle.textContent = '🌙'; // Lua para dark mode
     }
 }
+
+function createProfileCards() {
+    const profilesList = document.getElementById('profiles-list');
+    if (!profilesList) return;
+
+    profilesList.innerHTML = '';
+
+    userProfiles.forEach(profile => {
+        const li = document.createElement('li');
+        const article = document.createElement('article');
+        article.className = 'profile';
+        article.setAttribute('role', 'button');
+        article.tabIndex = 0;
+
+        const figure = document.createElement('figure');
+
+        const img = document.createElement('img');
+        img.src = profile.image;
+        img.alt = `${profile.name} avatar`;
+
+        const figcaption = document.createElement('figcaption');
+        figcaption.textContent = profile.name;
+
+        figure.appendChild(img);
+        figure.appendChild(figcaption);
+        article.appendChild(figure);
+        li.appendChild(article);
+        profilesList.appendChild(li);
+
+        const goToCatalog = () => {
+            localStorage.setItem('perfilAtivoNome', profile.name);
+            localStorage.setItem('perfilAtivoImagem', profile.image);
+            window.location.href = 'catalogo/catalogo.html';
+        };
+
+        article.addEventListener('click', goToCatalog);
+        article.addEventListener('keydown', (event) => {
+            if (event.key === 'Enter' || event.key === ' ') {
+                event.preventDefault();
+                goToCatalog();
+            }
+        });
+    });
+}
+
+createProfileCards();
